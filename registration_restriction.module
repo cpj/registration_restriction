@@ -2,6 +2,7 @@
 /**
  * @file
  * Specifies rules for restricting user registration based on email domains.
+ * based on code from: http://drupal.org/node/1405368#comment-5482220
  */
 
   function registration_restriction_form_alter(&$form, &$form_state, $form_id) {
