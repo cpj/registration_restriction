@@ -1,0 +1,4 @@
+name = Registration Restriction
+descripton = Limit email addresses used for registration to specific allowed domains.
+core = 7.x
+package = User
