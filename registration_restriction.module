@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * Specifies rules for restricting user registration based on email domains.
+ */
+
+  function registration_restriction_form_alter(&$form, &$form_state, $form_id) {
+    dpm('form alter');
+  // make sure this is the register form
+    if ($form_id == 'user_register_form') {
+  // this adds your custom validation function to the form validation array
+     $form['#validate'][] = 'registration_restriction_user_register_validation';
+    }
+  }
+
+  function registration_restriction_user_register_validation($form, &$form_state) {
+  dpm('register validation');
+  // Schools
+    $allowedDomains = array('evergreen.edu');
+  
+  // Get domain 
+        $email = $form_state['values']['mail'];
+        $splitIndex = strpos($email, '@')+1;
+        $emailLength = strlen($email);
+        $domain = substr($email, $splitIndex, $emailLength);
+        
+  // Error if not legitimate domain  
+    if ( !in_array($domain, $allowedDomains) ) {
+     form_set_error('mail', 'Invalid email address');
+    }
+  }
+?>
