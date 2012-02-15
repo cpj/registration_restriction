@@ -16,7 +16,7 @@
 
   function registration_restriction_user_register_validation($form, &$form_state) {
   dpm('register validation');
-  // Schools
+  // allowed domains
     $allowedDomains = array('evergreen.edu');
   
   // Get domain 
