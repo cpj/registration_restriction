@@ -19,7 +19,7 @@
   // allowed domains
     $allowedDomains = array('evergreen.edu');
   
-  // Get domain 
+  // Get domain of user email
         $email = $form_state['values']['mail'];
         $splitIndex = strpos($email, '@')+1;
         $emailLength = strlen($email);
