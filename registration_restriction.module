@@ -25,7 +25,7 @@
         
   // Error if not legitimate domain  
     if ( !in_array($domain, $allowedDomains) ) {
-     form_set_error('mail', 'Invalid email address');
+     form_set_error('mail', 'Invalid email address. Please use an @evergreen.edu email.');
     }
   }
 ?>
