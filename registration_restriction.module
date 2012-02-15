@@ -6,7 +6,6 @@
  */
 
   function registration_restriction_form_alter(&$form, &$form_state, $form_id) {
-    dpm('form alter');
   // make sure this is the register form
     if ($form_id == 'user_register_form') {
   // this adds your custom validation function to the form validation array
@@ -15,7 +14,6 @@
   }
 
   function registration_restriction_user_register_validation($form, &$form_state) {
-  dpm('register validation');
   // allowed domains
     $allowedDomains = array('evergreen.edu');
   
